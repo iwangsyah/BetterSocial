@@ -68,7 +68,8 @@ export default function Home({navigation}) {
         pagingEnabled
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        enableEmptySections={true}
+        snapToInterval={483 + 64}
+        decelerationRate={0}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
       <FloatButtonEdit />

@@ -5,7 +5,7 @@ export default function Chat({navigation}) {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
-        <Text style={styles.text}>CHAaT</Text>
+        <Text style={styles.text}>CHAT</Text>
       </View>
     </SafeAreaView>
   );

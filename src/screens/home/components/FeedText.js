@@ -12,7 +12,7 @@ export default function FeedText({text})  {
   }, []);
  
   return (
-    <View style={{paddingVertical: 24, paddingHorizontal: 21}}>
+    <View style={styles.container}>
       <Text onTextLayout={onTextLayout} numberOfLines={textShown ? undefined : 5} style={{ lineHeight: 21 }}>
         {text}
       </Text>
@@ -26,6 +26,10 @@ export default function FeedText({text})  {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 24,
+    paddingHorizontal: 21
+  },
   txtMore: {
     lineHeight: 21, 
     marginTop: 10, 

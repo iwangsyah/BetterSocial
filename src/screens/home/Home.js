@@ -41,7 +41,7 @@ export default function Home({navigation}) {
         pagingEnabled
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        snapToInterval={483 + 64}
+        snapToInterval={483 + 64 + 8}
         decelerationRate={0}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />

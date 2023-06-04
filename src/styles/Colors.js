@@ -10,6 +10,7 @@ export const TEXT_TERITARY = '#000000';
 export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
 export const ORANGE = '#FFA400';
+export const TOSCA = '#00ADB5';
 export const GREY = '#707070';
 export const LINE = '#C4C4C4';
 export const BLUE = '#3685ed';

@@ -5,14 +5,12 @@ import {
   Pressable,
 } from 'react-native';
 import Images from '../../assets/images';
+import { TOSCA } from '../../styles/Colors';
 
 export default function FloatButtonEdit()  {  
   return (
     <Pressable style={styles.button}>
-      <Image 
-        source={Images.icPencil} 
-        style={{width: 22, height: 22}} 
-      />
+      <Image source={Images.icPencil}style={styles.icon} />
     </Pressable>
   )
 }
@@ -23,10 +21,14 @@ const styles = StyleSheet.create({
     height: 50, 
     alignItems: 'center', 
     justifyContent: 'center',
-    backgroundColor: '#00ADB5', 
+    backgroundColor: TOSCA, 
     position: 'absolute', 
     borderRadius: 25, 
     right: 20, 
     bottom: 62,
+  },
+  icon: {
+    width: 22, 
+    height: 22
   }
 })

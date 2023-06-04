@@ -1,27 +1,22 @@
 import React from 'react';
-import { View, Image,StyleSheet } from 'react-native';
-import { BG_PRIMARY } from '../../styles/Colors';
+import { View, Image,StyleSheet, Text } from 'react-native';
+import { BG_PRIMARY, ICON, LINE, TOSCA } from '../../styles/Colors';
 import UserInfo from './components/UserInfo';
 import FeedText from './components/FeedText';
+import Images from '../../assets/images';
+import ActionBar from './components/ActionBar';
+import FeedImage from './components/FeedImage';
 
 export default function FeedItem({item}) {
 
   return (
-    <View style={{backgroundColor: BG_PRIMARY}}>
+    <View style={{flex: 1, backgroundColor: BG_PRIMARY}}>
       <UserInfo />
       <View style={{height: 483}}>
         <FeedText text={item.text} />
-        <Image source={item.image} style={styles.image}/>
-        <View style={{flexDirection: 'row'}}>
-        </View>
+        <FeedImage image={item.image} />
+        <ActionBar />
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  image : {
-    width: '100%',
-    height: 300,
-  }
-});

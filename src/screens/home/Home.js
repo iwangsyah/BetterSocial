@@ -5,10 +5,12 @@ import {
   FlatList,
   StyleSheet,
   SafeAreaView,
+  Pressable,
 } from 'react-native';
 import _ from 'lodash';
 import {BG_PRIMARY, BG_TERITARY} from '../../styles/Colors';
 import FeedItem from './FeedItem';
+import Images from '../../assets/images';
 
 export default function Home({navigation}) {
   const data = [
@@ -33,6 +35,30 @@ export default function Home({navigation}) {
   const renderItem = ({item}) => (
     <FeedItem item={item} />
   );
+
+  const FloatButtonEdit = () => (
+    <Pressable style={{
+      width: 50, 
+      height: 50, 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: '#00ADB5', 
+      position: 'absolute', 
+      borderRadius: 25, 
+      right: 20, 
+      bottom: 62,
+      shadowColor: '#000000',
+      shadowOffset: {
+        width: 2,
+        height: 2,
+      },
+      elevation: 8,
+      shadowRadius: 4,
+      shadowOpacity: 0.3,
+    }}>
+      <Image source={Images.icPencil} style={{width: 22, height: 22}} />
+    </Pressable>
+  )
   
  
   return (
@@ -45,6 +71,7 @@ export default function Home({navigation}) {
         enableEmptySections={true}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
+      <FloatButtonEdit />
     </SafeAreaView>
   );
 }

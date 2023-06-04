@@ -3,13 +3,36 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import Images from '../../../assets/images';
 import { LINE, TEXT_PRIMARY, TEXT_SECONDARY } from '../../../styles/Colors';
 
-export default function UserInfo()  {  
+export default function UserInfo({item})  {  
+
+  const Separator = () => <View style={styles.separator} />
+
+  const RenderItemInfo = ({data, icon}) => (
+    <>
+      {data ? (
+        <View style={styles.rowCenterVertical}>
+          <Separator />
+          {icon ? (
+            <Image source={icon} style={styles.icon} />
+          ) : (
+            <Text style={styles.txtInfo}>{data}</Text>
+          )}
+        </View>
+      ) : null}
+    </>
+  )
+
   return (
     <View style={styles.userinfoContainer}>
       <Image source={Images.icProfile} style={styles.icProfile} />
       <View>
         <Text style={styles.txtName}>Usup Suparma</Text>
-        <Text style={styles.txtDate}>Mar 24, 2022</Text>
+        <View style={styles.rowCenterVertical}>
+          <Text style={styles.txtInfo}>Mar 24, 2022</Text>
+          <RenderItemInfo data={item.isPublic} icon={Images.icGlobe} />
+          <RenderItemInfo data={item.isExpiry} icon={Images.icExpiry} />
+          <RenderItemInfo data={item.location} />
+        </View>
       </View>
     </View>
   )
@@ -34,8 +57,22 @@ const styles = StyleSheet.create({
     color: TEXT_PRIMARY, 
     marginBottom: 5
   },
-  txtDate : {
+  rowCenterVertical: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  txtInfo : {
     fontSize: 12, 
     color: TEXT_SECONDARY
   },
+  icon: {
+    width: 16,
+    height: 16
+  },
+  separator: {
+    width: 2,
+    height: 2,
+    backgroundColor: TEXT_SECONDARY,
+    marginHorizontal: 5
+  }
 })

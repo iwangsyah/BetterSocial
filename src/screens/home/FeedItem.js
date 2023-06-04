@@ -11,7 +11,7 @@ export default function FeedItem({item}) {
 
   return (
     <View style={{flex: 1, backgroundColor: BG_PRIMARY}}>
-      <UserInfo />
+      <UserInfo item={item} />
       <View style={{height: 483}}>
         <FeedText text={item.text} />
         <FeedImage image={item.image} />

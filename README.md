@@ -47,3 +47,6 @@ The generated APK can be found under:
 ```
 android/app/build/outputs/apk/release/app-release.apk
 ```
+
+### An example of an APK that you can download
+https://drive.google.com/file/d/1H2TsEvcselTz1GRIUj6HNf7yPkHPR4k0/view?usp=sharing
